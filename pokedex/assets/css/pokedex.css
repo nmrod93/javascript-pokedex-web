@@ -6,11 +6,12 @@
     padding: 0;
     margin: 0;
 }
+
+
     
 .pokemon {
      margin: .5rem;
      padding: 1rem;
-     background-color: #49c0b0;
      border-radius: 1rem;
      display: flex;
      flex-direction: column;
@@ -42,7 +43,6 @@
 }
   
 .pokemon .detail .types .type {
-      background-color: #61e1ca;
       color: #fff;
       pad: .25rem 5rem;
       margin: .25rem 0;
