@@ -18,7 +18,7 @@ function convertPokemonToLi(pokemon) {
                 <img src="${pokemon.photo}"
                      alt="${pokemon.name}">
             </div>
-            <div class="modalButton">
+            <div class="openModalButton">
                 <button onclick="openModal()" type="button">Details</button>
             </div>
     `
