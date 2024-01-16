@@ -1,9 +1,10 @@
+
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
 const maxRecords = 151
 const limit = 10
-let offset = 0;
+let offset = 0
 
 function convertPokemonToLi(pokemon) {
     return `
@@ -17,11 +18,9 @@ function convertPokemonToLi(pokemon) {
                 <img src="${pokemon.photo}"
                      alt="${pokemon.name}">
             </div>
-            <div class="modal">
-                <div class="modalBtn">Details</div>
+            <div class="modalButton">
+                <button onclick="openModal()" type="button">Details</button>
             </div>
-        </li>
-        
     `
 }
 
@@ -31,8 +30,6 @@ function loadPokemonItens(offset, limit) {
         pokemonList.innerHTML += newHtml
     })
 }
-
-
 
 loadPokemonItens(offset, limit)
 
@@ -50,3 +47,12 @@ loadMoreButton.addEventListener('click', () => {
     }
 })
 
+function openModal() {
+    let modal = document.querySelector('.modal')
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    let modal = document.querySelector('.modal')
+    modal.style.display = 'none';
+}

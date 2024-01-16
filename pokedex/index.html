@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -20,12 +21,13 @@
     <!-- Nosso CSS -->
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/pokedex.css">
+    <link rel="stylesheet" href="/assets/css/modal.css">
 </head>
 
 <body>
     <section class="content">
         <h1>Pokedex</h1>
-
+        
         <ol id="pokemonList" class="pokemons">
             <!-- ..... Pokemons here ..... -->
         </ol>
@@ -36,6 +38,14 @@
             </button>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal">
+        <div onclick="closeModal()" class="closeModal"></div>
+        <div class="modal-content">
+            <div class="modal-detail" id="modal-detail"></div>
+        </div>
+    </div>
 
     <!-- Nosso JS -->
     <script src="/assets/js/pokemon-model.js"></script>
