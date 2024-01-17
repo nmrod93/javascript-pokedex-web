@@ -1,26 +1,25 @@
-
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
 const maxRecords = 151
 const limit = 10
-let offset = 0
+let offset = 0;
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li class="pokemon ${pokemon.type}" onclick="openModal(${pokemon.number})">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
+
             <div class="detail">
                 <ol class="types">
                     ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
-                </ol>               
+                </ol>
+
                 <img src="${pokemon.photo}"
                      alt="${pokemon.name}">
             </div>
-            <div class="openModalButton">
-                <button onclick="openModal()" type="button">Details</button>
-            </div>
+        </li>
     `
 }
 
@@ -47,12 +46,38 @@ loadMoreButton.addEventListener('click', () => {
     }
 })
 
-function openModal() {
-    let modal = document.querySelector('.modal')
-    modal.style.display = 'block';
+function openModal(number) {
+    var modal = document.getElementById('modal');
+
+    var modalContent = document.querySelector('.modal-content');
+
+    // Construir o conteúdo do modal com base nos parâmetros fornecidos
+    pokeApi.getPokemonDetailToModal(number).then( pokemon => {
+        console.log(pokemon);
+        var modalHTML = `
+            <div class="modal-content">
+                <div>
+                    <span class="close" onclick="closeModal()">&times;</span>
+                </div>
+                <h1>TESTE</h1>
+            </div>
+        `;
+
+        modalContent.innerHTML = modalHTML;
+
+        modal.style.display = 'block';
+    });
 }
 
 function closeModal() {
-    let modal = document.querySelector('.modal')
+    var modal = document.getElementById('modal');
     modal.style.display = 'none';
 }
+
+// Fechar o modal se o usuário clicar fora dele
+window.onclick = function(event) {
+    var modal = document.getElementById('modal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+};
