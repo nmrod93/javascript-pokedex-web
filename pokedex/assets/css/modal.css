@@ -1,7 +1,7 @@
 
 .modal {
     display: none;
-    width: 500px;
+width: 500px;
     height: 500px;
     background-color: #000;
     position: absolute;
@@ -30,6 +30,18 @@
     background-color: #fff;
     border-radius: 50%;
     float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
 }
 
+@keyframes animate {
+    from {opacity: 1;}
+    from {opacity: 0;}
+}
