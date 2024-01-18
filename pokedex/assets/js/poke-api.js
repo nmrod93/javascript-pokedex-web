@@ -3,6 +3,7 @@ const pokeApi = {}
 
 function convertPokeApiDetailToPokemon(pokeDetail) {
     const pokemon = new Pokemon()
+
     pokemon.number = pokeDetail.id
     pokemon.name = pokeDetail.name
 
@@ -11,6 +12,8 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
 
     pokemon.types = types
     pokemon.type = type
+
+    pokemon.stats = pokeDetail.stats.map((typeStats) => typeStats.stat.name)
 
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
 
@@ -34,40 +37,3 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
         .then((pokemonsDetails) => pokemonsDetails)
 }
 
-pokeApi.getPokemonDetailToModal = (id) => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`
-    return fetch(url)
-        .then((response) => response.json())
-        .then(modalDetails);
-}
-
-function modalDetails(pokeDetail) {
-    return new Promise((resolve, reject) => {
-        const pokemon = new Pokemon();
-
-        fetch(pokeDetail.species.url)
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                console.log(data);
-                pokemon.number = pokeDetail.id;
-                pokemon.name = pokeDetail.name;
-
-                const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name);
-                const [type] = types;
-
-                pokemon.types = types;
-                pokemon.type = type;
-
-                pokemon.photo = pokeDetail.sprites.other.dream_world.front_default;
-                pokemon.moves = pokeDetail.moves;
-                pokemon.height = pokeDetail.height;
-                pokemon.weight = pokeDetail.weight;
-                pokemon.abilities = pokeDetail.abilities;
-                pokemon.species =  data.name;
-
-                resolve(pokemon);
-            })
-    });
-}

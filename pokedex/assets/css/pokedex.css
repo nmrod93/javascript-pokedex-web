@@ -86,18 +86,6 @@
     border-radius: 1rem;
 }
 
-.pokemonDetail {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem; /* Ajuste o valor conforme necessário */
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    min-height: 384px;
-}
-
 .pokemon .number {
     color: #000;
     opacity: .3;
@@ -105,24 +93,10 @@
     font-size: .625rem;
 }
 
-.pokemonDetail .number {
-    color: #000;
-    opacity: .3;
-    text-align: right;
-    font-size: 1.625rem;
-}
-
 .pokemon .name {
     text-transform: capitalize;
     color: #fff;
     margin-bottom: .25rem;
-}
-
-.pokemonDetail .nameDetail {
-    text-transform: capitalize;
-    color: #000;
-    margin-bottom: .25rem;
-    font-size: 1.625rem;
 }
 
 .pokemon .detail {
@@ -146,34 +120,6 @@
     border-radius: 1rem;
     filter: brightness(1.1);
     text-align: center;
-}
-
-.pokemonDetail .detail .types {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-}
-
-.pokemonDetail .detail .types .type {
-    color: #fff;
-    padding: .25rem .5rem;
-    margin: .25rem 0;
-    font-size: .925rem;
-    border-radius: 1rem;
-    filter: brightness(1.1);
-    text-align: center;
-    max-width: 120px;
-    margin-right: 5px;
-}
-
-.pokemonDetail img {
-    width: 250px;
-    position: absolute;
-    top: 180px; /* Ajuste conforme necessário para a posição vertical */
-    left: 50%; /* Posiciona a imagem no centro horizontalmente */
-    transform: translateX(-50%); /* Centraliza a imagem horizontalmente */
-    border-radius: 10px 10px 0 0; /* Borda superior arredondada */
 }
 
 .pokemon .detail img {

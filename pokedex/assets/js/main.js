@@ -7,7 +7,7 @@ let offset = 0;
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}" onclick="openModal(${pokemon.number})">
+        <li class="pokemon ${pokemon.type}" onclick="handleOpenModal(${JSON.stringify(pokemon).split('"').join("&quot;")})">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
@@ -46,38 +46,29 @@ loadMoreButton.addEventListener('click', () => {
     }
 })
 
-function openModal(number) {
-    var modal = document.getElementById('modal');
+function handleOpenModal(pokemon) {
+    console.log(pokemon)
+    var modal = document.getElementById('modal')
+    var modalContent = document.querySelector('.modal-content')
 
-    var modalContent = document.querySelector('.modal-content');
-
-    // Construir o conteúdo do modal com base nos parâmetros fornecidos
-    pokeApi.getPokemonDetailToModal(number).then( pokemon => {
-        console.log(pokemon);
-        var modalHTML = `
+    var modalHTML = `
             <div class="modal-content">
                 <div>
                     <span class="close" onclick="closeModal()">&times;</span>
                 </div>
                 <h1>TESTE</h1>
+                <img src="${pokemon.photo}"
+                     alt="${pokemon.name}">
             </div>
-        `;
+        `
 
-        modalContent.innerHTML = modalHTML;
+        modalContent.innerHTML = modalHTML
 
-        modal.style.display = 'block';
-    });
+        modal.style.display = 'block'   
 }
 
 function closeModal() {
-    var modal = document.getElementById('modal');
-    modal.style.display = 'none';
+    var modal = document.getElementById('modal')
+    modal.style.display = 'none'
 }
 
-// Fechar o modal se o usuário clicar fora dele
-window.onclick = function(event) {
-    var modal = document.getElementById('modal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-};
