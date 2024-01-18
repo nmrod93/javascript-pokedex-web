@@ -47,14 +47,14 @@ loadMoreButton.addEventListener('click', () => {
 })
 
 function handleOpenModal(pokemon) {
-    console.log(pokemon)
+    // console.log(pokemon)
     var modal = document.getElementById('modal')
     var modalContent = document.querySelector('.modal-content')
 
     var modalHTML = `
             <div class="modal-content">
                 <div>
-                    <span class="close" onclick="closeModal()">&times;</span>
+                    <span class="close" onclick="handleCloseModal()">&times;</span>
                 </div>
                 <h1>TESTE</h1>
                 <img src="${pokemon.photo}"
@@ -67,7 +67,7 @@ function handleOpenModal(pokemon) {
         modal.style.display = 'block'   
 }
 
-function closeModal() {
+function handleCloseModal() {
     var modal = document.getElementById('modal')
     modal.style.display = 'none'
 }
