@@ -39,7 +39,6 @@ loadMoreButton.addEventListener('click', () => {
     if (qtdRecordsWithNexPage >= maxRecords) {
         const newLimit = maxRecords - offset
         loadPokemonItens(offset, newLimit)
-
         loadMoreButton.parentElement.removeChild(loadMoreButton)
     } else {
         loadPokemonItens(offset, limit)
@@ -62,9 +61,8 @@ function handleOpenModal(pokemon) {
             </div>
         `
 
-        modalContent.innerHTML = modalHTML
-
-        modal.style.display = 'block'   
+    modalContent.innerHTML = modalHTML
+    modal.style.display = 'block'   
 }
 
 function handleCloseModal() {
