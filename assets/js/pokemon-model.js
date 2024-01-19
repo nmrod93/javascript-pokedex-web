@@ -6,8 +6,9 @@ class Pokemon {
     types = []
     photo
     stats = []
-    // height
-    // weight
-    // species
-    // abilities = []
+    specialAttack   // Take special-attack stats
+    specialDefense  // Take special-defense stats
+    height
+    weight
+    abilities = []
 }

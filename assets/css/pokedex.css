@@ -164,34 +164,3 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
-
-/* MUDAR PARA ARQUIVO DE MODAL E/OU DETAILS */
-.modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    max-width: 600px;
-    background-color: #fefefe;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, .5);
-}
-
-.close {
-    color: #000;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.modal-content {
-    background: rgba(255, 255, 255, 0.8);
-    position: relative;
-    padding: 20px;
-}

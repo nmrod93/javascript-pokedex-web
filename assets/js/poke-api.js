@@ -6,16 +6,20 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
 
     pokemon.number = pokeDetail.id
     pokemon.name = pokeDetail.name
-    pokemon.stats = pokeDetail.stats.map((typeStats) => typeStats.stat.name)
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+    pokemon.height = pokeDetail.height
+    pokemon.weight = pokeDetail.weight 
 
+    pokemon.abilities = pokeDetail.abilities.map((typeAbilities) => typeAbilities.ability.name)
+    pokemon.stats = pokeDetail.stats.map((typeStats) => pokemon[typeStats.stat.name] = typeStats.base_stat)
+    console.log(pokemon)
+    pokemon.specialAttack = pokemon.stats[3]
+    pokemon.specialDefense = pokemon.stats[4]
     const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types
 
     pokemon.types = types
-    pokemon.type = type
-
-    
+    pokemon.type = type  
 
     return pokemon
 }

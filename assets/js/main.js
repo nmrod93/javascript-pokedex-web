@@ -55,11 +55,28 @@ function handleOpenModal(pokemon) {
                 <div>
                     <span class="close" onclick="handleCloseModal()">&times;</span>
                 </div>
-                <h1>TESTE</h1>
+                <div class="detail ${pokemon.type}">
+                    <span class="pokeNumber">#${pokemon.number}</span>
+                    <span class="pokeName">${pokemon.name}</span>
+                    <span class="types">
+                        ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                    </span>
                 <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
+                    alt="${pokemon.name}">
+                </div>                
+                <div class="stats">Stats</div>  
+                <div class="poke-detail">   
+                    <div>Attack: ${pokemon.attack}</div>
+                    <div>Defense: ${pokemon.defense}<div>
+                    <div>Hitpoints: ${pokemon.hp}</div>
+                    <div>Special Attack: ${pokemon.specialAttack}</div>
+                    <div>Special Defense: ${pokemon.specialDefense}</div>
+                    <div>Speed: ${pokemon.speed}</div>
+                    <div>Abilities: ${pokemon.abilities}</div>
+                </div>
             </div>
         `
+        
 
     modalContent.innerHTML = modalHTML
     modal.style.display = 'block'   
