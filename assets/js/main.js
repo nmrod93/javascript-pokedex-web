@@ -52,7 +52,7 @@ function handleOpenModal(pokemon) {
 
     var modalHTML = `
             <div>
-                <span class="close" onclick="handleCloseModal()">&times;</span>
+                <span class="close" onclick="handleCloseModal()">&larr;</span>
             </div>
             <div class="modalDetail ${pokemon.type}">
                 <span class="pokeName">${pokemon.name}</span>
