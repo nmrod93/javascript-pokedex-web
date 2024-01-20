@@ -85,37 +85,37 @@ img {
     flex-direction: column;
 }
 
-.poke-detail .atkDetail .atk {
+.poke-detail .stats-detail .atk {
     color: #000;
     font-weight: bold;
 }
 
-.poke-detail .defDetail .def {
+.poke-detail .stats-detail .def {
     color: #000;
     font-weight: bold;
 }
 
-.poke-detail .hpDetail .hp {
+.poke-detail .stats-detail .hp {
     color: #000;
     font-weight: bold;
 }
 
-.poke-detail .spcAtkDetail .spcAtk {
+.poke-detail .stats-detail .spcAtk {
     color: #000;
     font-weight: bold;
 }
 
-.poke-detail .spcDefDetail .spcDef {
+.poke-detail .stats-detail .spcDef {
     color: #000;
     font-weight: bold;
 }
 
-.poke-detail .spdDetail .spd {
+.poke-detail .stats-detail .spd {
     color: #000;
     font-weight: bold;
 }
 
-.poke-detail .atkDetail .attack {
+.poke-detail .stats-detail .attack {
     color: #000;
     font-weight: bold;
 }
@@ -124,22 +124,14 @@ img {
     text-decoration: underline;
     font-weight: bold;
     font-size: large;
-    padding: 0 0 1rem 0;
 }
 
-.aboutDetail {
-    color: #787878;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.aboutDetail .heightDetail .height {
+.poke-detail .stats-detail .height {
     color: #000;
     font-weight: bold;
 }
 
-.aboutDetail .weightDetail .weight {
+.poke-detail .stats-detail .weight {
     color: #000;
     font-weight: bold;
 }
