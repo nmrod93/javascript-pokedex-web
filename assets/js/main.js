@@ -55,24 +55,44 @@ function handleOpenModal(pokemon) {
                 <div>
                     <span class="close" onclick="handleCloseModal()">&times;</span>
                 </div>
-                <div class="detail ${pokemon.type}">
-                    <span class="pokeNumber">#${pokemon.number}</span>
+                <div class="modalDetail ${pokemon.type}">
                     <span class="pokeName">${pokemon.name}</span>
+                    <span class="pokeNumber">#${pokemon.number}</span>
                     <span class="types">
                         ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                     </span>
                 <img src="${pokemon.photo}"
                     alt="${pokemon.name}">
                 </div>                
-                <div class="stats">Stats</div>  
+                <div class="stats">Base Stats</div>  
                 <div class="poke-detail">   
-                    <div>Attack: ${pokemon.attack}</div>
-                    <div>Defense: ${pokemon.defense}<div>
-                    <div>Hitpoints: ${pokemon.hp}</div>
-                    <div>Special Attack: ${pokemon.specialAttack}</div>
-                    <div>Special Defense: ${pokemon.specialDefense}</div>
-                    <div>Speed: ${pokemon.speed}</div>
-                    <div>Abilities: ${pokemon.abilities}</div>
+                    <div class="atkDetail">Attack: 
+                        <span class="atk">${pokemon.attack}</span>
+                    </div>
+                    <div class="defDetail">Defense: 
+                        <span class="def">${pokemon.defense}</span>
+                    </div>
+                    <div class="hpDetail">Hitpoints: 
+                        <span class="hp">${pokemon.hp}</span>
+                    </div>
+                    <div class="spcAtkDetail">Special Attack: 
+                        <span class="spcAtk">${pokemon.specialAttack}</span>
+                    </div>
+                    <div class="spcDefDetail">Special Defense: 
+                        <span class="spcDef">${pokemon.specialDefense}</span>
+                    </div>
+                    <div class="spdDetail">Speed: 
+                        <span class="spd">${pokemon.speed}</span>
+                    </div>
+                </div>
+                <div class="about">About</div>
+                <div class="aboutDetail">
+                    <div class="heightDetail">Height: 
+                        <span class="height">${pokemon.height}
+                    </div>
+                    <div class="weightDetail">Weight: 
+                        <span class="weight">${pokemon.weight}
+                    </div>
                 </div>
             </div>
         `
