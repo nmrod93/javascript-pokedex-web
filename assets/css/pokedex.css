@@ -85,6 +85,8 @@
     padding: 1rem;
     border-radius: 1rem;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .5);
+
 }
 
 .pokemon .number {
@@ -146,6 +148,8 @@
     background-color: #6c79db;
     border: none;
     border-radius: 1rem;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5);
+
 }
 
 @media screen and (min-width: 380px) {

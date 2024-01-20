@@ -3,15 +3,21 @@
     box-sizing: border-box;
 }
 
+h1 {
+    color: #000;
+    display: flex;
+    justify-content: center;
+}
+
 body {
-    background-color: #f6f8fc;
+    transform: scale(1);
+    background-color: #fff;
 }
 
 .content {
     width: 100vw;
     height: 100vh;
     padding: 1rem;
-    background-color: #fff;
 }
 
 @media screen and (min-width: 992px) {
