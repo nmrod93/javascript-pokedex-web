@@ -96,7 +96,7 @@ function handleOpenModal(pokemon) {
     `
         
     modalContent.innerHTML = modalHTML
-    modal.style.display = 'block'   
+    modal.style.display = 'block'
 }
 
 function handleCloseModal() {
